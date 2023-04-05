@@ -1,5 +1,6 @@
 package one.digitalinnovation;
 
+import one.digitalinnovation.facade.Facade;
 import one.digitalinnovation.singleton.SingletonEager;
 import one.digitalinnovation.singleton.SingletonLazy;
 import one.digitalinnovation.singleton.SingletonLazyHolder;
@@ -33,6 +34,7 @@ public class Test {
         System.out.println(lazyHolder);
 
         //Strategy
+        System.out.println("-=".repeat(30));
         Comportamento padrao = new ComportamentoPadrao();
         Comportamento dormir = new ComportamentoDormir();
         Comportamento alerta = new ComportamentoAlerta();
@@ -47,8 +49,16 @@ public class Test {
         robo.mover();
         robo.setComportamento(padrao);
         robo.mover();
-        //Tentei criar uma sequência que faça sentido para aqueles robôs de restaurantes
-    }
+        //Tentei criar uma sequência que faça sentido para aqueles robôs de entrada de restaurantes
     
+        //Facade
+        System.out.println("-=".repeat(30));
+        Facade facade = new Facade();
+        facade.migrarCliente("Venilton", "48134-250");
+        System.out.println("-=".repeat(30));
+        facade.migrarCliente("Claudia", "26824-130");
+    
+
+    }
     
 }
